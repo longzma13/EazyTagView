@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="flowlayout_horizontal_padding">10dp</dimen>
+    <dimen name="flowlayout_vertical_padding">10dp</dimen>
+    <dimen name="radius_size">5dp</dimen>
+    <dimen name="size_stroke">1dp</dimen>
+    <dimen name="padding_left_right">10dp</dimen>
+    <dimen name="padding_top_bottom">5dp</dimen>
+</resources>
