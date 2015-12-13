@@ -15,12 +15,14 @@ public class EazyTagView extends TextView {
     public EazyTagView(Context context) {
         super(context);
         setaPaddingTag();
+        setClickable(true);
     }
     public EazyTagView(int id,String tag,Context context){
         super(context);
         setText(tag);
         setId(id);
         setaPaddingTag();
+        setClickable(true);
     }
     public EazyTagView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -42,12 +44,13 @@ public class EazyTagView extends TextView {
         requestLayout();
     }
     public EazyTagView setBackgroundTag(int drawable) {
+        setClickable(true);
         setBackgroundResource(drawable);
         return this;
     }
 
     public EazyTagView setContentColor(int color) {
-        setTextColor(getContext().getResources().getColor(color));
+        setTextColor(getContext().getResources().getColorStateList(color));
         return this;
     }
 
