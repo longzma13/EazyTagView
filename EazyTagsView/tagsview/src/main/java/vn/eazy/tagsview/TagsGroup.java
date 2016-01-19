@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created by LongLe on 12/12/15.
@@ -169,7 +170,27 @@ public class TagsGroup extends ViewGroup {
 
     private void addViewGroup(EazyTag tag) {
         if (getChildView() == null) {
-            EazyTagView tagView = EazyTagViewFactoty.createTagViewBlueType(tag.getId(), tag.getTag(), getContext());
+            Random rdType = new Random();
+            int type = rdType.nextInt(400)/100;
+            EazyTagView tagView = null;
+            switch (type){
+                case 0:
+                    tagView = EazyTagViewFactoty.createTagViewBlueType(tag.getId(), tag.getTag(), getContext());
+                    break;
+                case 1:
+                    tagView = EazyTagViewFactoty.createTagViewOrangeType(tag.getId(), tag.getTag(), getContext());
+                    break;
+                case 2:
+                    tagView = EazyTagViewFactoty.createTagViewVioletType(tag.getId(), tag.getTag(), getContext());
+                    break;
+                case 3:
+                    tagView = EazyTagViewFactoty.createTagViewBlackType(tag.getId(), tag.getTag(), getContext());
+                    break;
+                default:
+
+                    break;
+            }
+
             if (getTypeFaceTag() != null) {
                 tagView.setTypreFaceTag(getTypeFaceTag());
             }
@@ -187,7 +208,6 @@ public class TagsGroup extends ViewGroup {
         this.setTags(new ArrayList<>(tags));
         for (EazyTag tag : tags) {
             addTag(tag);
-            addViewGroup(tag);
         }
     }
 
@@ -195,7 +215,6 @@ public class TagsGroup extends ViewGroup {
         removeAllTag();
         for (EazyTag tag : tags) {
             addTag(tag);
-            addViewGroup(tag);
         }
     }
 
@@ -217,7 +236,7 @@ public class TagsGroup extends ViewGroup {
      *  set listener when user click a tagView.
      * @param clickListener
      */
-    public void setTagOnClickListener(View.OnClickListener clickListener){
+    public void setTagOnClickListener(OnClickListener clickListener){
         for(int i =0; i< getChildCount(); i++){
             View view = getChildAt(i);
             if(view instanceof EazyTagView){

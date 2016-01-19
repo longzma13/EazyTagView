@@ -7,15 +7,15 @@ import android.content.Context;
  */
 public class EazyTagViewFactoty {
     public static EazyTagView createTagViewOrangeType(int id, String tag,Context context){
-        return new EazyTagView(id,tag,context).setBackgroundTag(R.drawable.bg_type1).setContentColor(R.color.type_1);
+        return new EazyTagView(id,tag,context).setBackgroundTag(R.drawable.bg_orange_selector).setContentColor(R.color.text_color_type1_selector);
     }
     public static EazyTagView createTagViewBlueType(int id, String tag,Context context){
-        return new EazyTagView(id,tag,context).setBackgroundTag(R.drawable.bg_type2).setContentColor(R.color.type_2);
+        return new EazyTagView(id,tag,context).setBackgroundTag(R.drawable.bg_blue_selector).setContentColor(R.color.text_color_type2_selector);
     }
     public static EazyTagView createTagViewVioletType(int id, String tag,Context context){
-        return new EazyTagView(id,tag,context).setBackgroundTag(R.drawable.bg_type3).setContentColor(R.color.type_3);
+        return new EazyTagView(id,tag,context).setBackgroundTag(R.drawable.bg_violet_selector).setContentColor(R.color.text_color_type3_selector);
     }
     public static EazyTagView createTagViewBlackType(int id, String tag,Context context){
-        return new EazyTagView(id,tag,context).setBackgroundTag(R.drawable.bg_type4).setContentColor(R.color.type_4);
+        return new EazyTagView(id,tag,context).setBackgroundTag(R.drawable.bg_black_selector).setContentColor(R.color.text_color_type4_selector);
     }
 }
